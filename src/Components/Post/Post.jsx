@@ -2,9 +2,14 @@ import CreatePostForm from "../CreatePostForm/CreatePostForm"
 
 
 
-const Post = () => {
+const Post = (props) => {
 
-    return (<div></div>)
+    const likeEntry = [true]
+    const dislikeEntry = [false]
+
+    return (<div>
+        <h1>{props.post.name}</h1>
+    </div>)
 }
 
 export default Post

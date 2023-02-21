@@ -5,14 +5,20 @@ import React, { useState } from "react";
 
 function App() {
   const [posts, setPosts] = useState([
-    { name: "", Date: " ", Like: true, Dislike: false, Text: "" },
+    { name: "DeVante", date: "02/21/23 ", like: true, dislike: false, text: "Hello World" },
   ]);
+
+  function addNewPost(newPost){
+    let tempPosts = [newPost, ...posts]
+    setPosts(tempPosts)
+    
+  }
 
   return (
     <div>
       <NavBar />
-      <CreatePostForm/>
-      <PostList parentEntries={posts} />
+      <CreatePostForm addNewPost={addNewPost}/>
+      <PostList posts={posts} />
     </div>
   );
 }

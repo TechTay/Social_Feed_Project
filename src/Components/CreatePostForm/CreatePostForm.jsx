@@ -3,18 +3,24 @@ import PostList from "../PostList/PostList";
 import Post from "../Post/Post";
 
 
-const CreatePostForm = () => {
-  const [names, setName] = useState([""]);
-  const [body, setBody] = useState([""]);
+const CreatePostForm = (props) => {
+  const [name, setName] = useState([""]);
+  const [text, setText] = useState([""]);
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      setName([...names, body])
+      // Create a newPost object
+      let newPost = {
+        "name": name,
+        "text": text,
+        "date": date
+      }
+
+      // use the addNewPost function
+      props.addNewPost(newPost)
   }
 
-  const handlechange = (e) => {
-      setBody(e.target.value)
-      console.log(e.target.value)
+  
   }
 
   return (
@@ -22,18 +28,17 @@ const CreatePostForm = () => {
     <form onSubmit={handleSubmit}>
       <label>
         Name
-        <input type="text" value = {body} onChange={handlechange}/>
+        <input type="text" value = {name} onChange={(event) => setName(event.target.value)}/>
       </label>
       
       <label>
         Post
-        <input type="text" name="name" />
+        <input type="text" value={text} onChange={(event) => setText(event.target.value)} />
       </label>
       <input type="submit" value="Create" />
     </form>
-    {names.map(el => <Post post={el}/>)}
   </div>
   );
-};
+;
 
 export default CreatePostForm;
