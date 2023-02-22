@@ -1,14 +1,19 @@
-import CreatePostForm from "../CreatePostForm/CreatePostForm"
+import LikeDislikeButton from "./LikeDislikeButton"
 
 
 
 const Post = (props) => {
 
-    const likeEntry = [true]
-    const dislikeEntry = [false]
+    let currentDate = new Date();
+    let cDay = currentDate.getDate();
+    let cMonth = currentDate.getMonth() + 1;
+    let cYear = currentDate.getFullYear();
+    console.log("" + cDay + "/" + cMonth + "/" + cYear + "");
 
     return (<div>
-        <h1>{props.post.name}</h1>
+        <div>{props.post.name}</div>
+        <div>{props.post.text} <LikeDislikeButton/></div>
+        
     </div>)
 }
 

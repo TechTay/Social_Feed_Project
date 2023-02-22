@@ -1,0 +1,17 @@
+button {
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
+.active {
+    background-color: aqua;
+}
+
+.inactive {
+    background-color: gray;
+}

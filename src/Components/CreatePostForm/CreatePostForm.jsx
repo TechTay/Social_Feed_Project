@@ -6,6 +6,8 @@ import Post from "../Post/Post";
 const CreatePostForm = (props) => {
   const [name, setName] = useState([""]);
   const [text, setText] = useState([""]);
+  const [date, setDate] = useState([""]);
+  // const [, setText] = useState([""]);
 
   const handleSubmit = (e) => {
       e.preventDefault()
@@ -21,14 +23,14 @@ const CreatePostForm = (props) => {
   }
 
   
-  }
+  
 
   return (
   <div>
     <form onSubmit={handleSubmit}>
       <label>
         Name
-        <input type="text" value = {name} onChange={(event) => setName(event.target.value)}/>
+        <input type="text" value ={name} onChange={(event) => setName(event.target.value)}/>
       </label>
       
       <label>
@@ -38,7 +40,7 @@ const CreatePostForm = (props) => {
       <input type="submit" value="Create" />
     </form>
   </div>
-  );
+)};
 ;
 
 export default CreatePostForm;
