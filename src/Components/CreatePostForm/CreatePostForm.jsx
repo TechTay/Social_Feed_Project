@@ -6,7 +6,7 @@ import Post from "../Post/Post";
 const CreatePostForm = (props) => {
   const [name, setName] = useState([""]);
   const [text, setText] = useState([""]);
-  const [date, setDate] = useState([""]);
+  
   // const [, setText] = useState([""]);
 
   const handleSubmit = (e) => {
@@ -15,7 +15,7 @@ const CreatePostForm = (props) => {
       let newPost = {
         "name": name,
         "text": text,
-        "date": date
+        
       }
 
       // use the addNewPost function
