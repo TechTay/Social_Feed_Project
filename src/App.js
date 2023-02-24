@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 function App() {
   const [posts, setPosts] = useState([
-    { name: "", date: "02/21/23 ", like: true, dislike: false, text: "" },
+    { name: "DeVante", date: "02/21/23 ", like: true, dislike: false, text: "I Love my Full Stack Instructors!" },
   ]);
 
   function addNewPost(newPost){
