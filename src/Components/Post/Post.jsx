@@ -12,6 +12,7 @@ const Post = (props) => {
     console.log("" + cDay + "/" + cMonth + "/" + cYear + "");
 
     return (<div>
+        <div className="postN">{props.post.date}</div>
         <div className="postN">{props.post.name}</div>
         <div className="postT">{props.post.text} <LikeDislikeButton/></div>
         

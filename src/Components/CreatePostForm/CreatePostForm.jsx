@@ -6,8 +6,10 @@ import Post from "../Post/Post";
 const CreatePostForm = (props) => {
   const [name, setName] = useState([""]);
   const [text, setText] = useState([""]);
-  
-  // const [, setText] = useState([""]);
+    let currentDate = new Date();
+    let cDay = currentDate.getDate();
+    let cMonth = currentDate.getMonth() + 1;
+    let cYear = currentDate.getFullYear();
 
   const handleSubmit = (e) => {
       e.preventDefault()
@@ -15,7 +17,7 @@ const CreatePostForm = (props) => {
       let newPost = {
         "name": name,
         "text": text,
-        
+        "date": cMonth + "/" + cDay + "/" + cYear
       }
 
       // use the addNewPost function
